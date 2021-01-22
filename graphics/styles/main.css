@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Fatfrank';
+    src: url('../assets/fonts/fatfrank-webfont.eot');
+    src: url('../assets/fonts/fonts/fatfrank-webfont.eot?')
+      format('embedded-opentype'),
+    url('../assets/fonts/fonts/fatfrank-webfont.woff') format('woff'),
+    url('../assets/fonts/fonts/fatfrank-webfont.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
