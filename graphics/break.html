@@ -8,15 +8,15 @@
 
 <body>
 	<div class="sceneWrapper">
-		<div class="header">
-			<fitted-text class="pillText" text="Up Next: Revitalize vs Valhalla" max-width="1000" id="breakFlavorText">
+		<div class="header" id="header">
+			<fitted-text class="pillText" text=" " max-width="1000" id="pillFlavourText">
 			</fitted-text>
-			<div class="pillLogo">
+			<div class="pillLogo" id="pillLogo">
 				<img src="assets/SUEPin.png" class="headerLogo">
 			</div>
 		</div>
 
-		<!-- <div class="scene mainScene">
+		<div class="scene mainScene" id="mainScene">
 			<div>
 				<img src="assets/landMarks.png" class="landMarks">
 			</div>
@@ -57,9 +57,9 @@
 					</fitted-text>
 				</div>
 			</div>
-		</div> -->
+		</div>
 
-		<!-- <div class="scene teamScene">
+		<div class="scene teamScene" id="teamScene">
 			<div class="teamBox">
 				<div class="backTeamIcon"></div>
 				<img src="assets/Valhalla.jpg" class="teamIcon" id="teamAIcon">
@@ -102,115 +102,10 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 
 		<div class="scene sceneStages">
 			<div class="stagesGrid">
-				<div class="stageElem stageWidth">
-					<div class="stageImg stageWidth" style="background-image: url('stages/S2_Stage_Moray_Towers.png');"></div>
-					<div class="stageShade stageWidth"></div>
-
-					<div class="gameInfo stageWidth">
-						<div class="gameMap">Moray Towers</div>
-						<div class="gameMode">Tower Control</div>
-					</div>
-
-					<div class="stageWinner stageWidth">
-						<div class="teamWinnerName">
-							Dura Suffering in Salmon Run
-						</div>
-					</div>
-				</div>
-				<div class="stageElem stageWidth">
-					<div class="stageImg stageWidth" style="background-image: url('stages/S2_Stage_Camp_Triggerfish.png');"></div>
-					<div class="stageShade stageWidth"></div>
-
-					<div class="gameInfo stageWidth">
-						<div class="gameMap">Camp Triggerfish</div>
-						<div class="gameMode">Splat Zones</div>
-					</div>
-
-					<div class="stageWinner stageWidth">
-						<div class="teamWinnerName">
-							Revitalize
-						</div>
-					</div>
-				</div>
-				<div class="stageElem stageWidth">
-					<div class="stageImg stageWidth" style="background-image: url('stages/S2_Stage_Kelp_Dome.png');"></div>
-					<div class="stageShade stageWidth"></div>
-
-					<div class="gameInfo stageWidth">
-						<div class="gameMap">Kelp Dome</div>
-						<div class="gameMode">Clam Biltz</div>
-					</div>
-
-					<div class="stageWinner stageWidth">
-						<div class="teamWinnerName">
-							Valhalla
-						</div>
-					</div>
-				</div>
-				<div class="stageElem stageWidth">
-					<div class="stageImg stageWidth" style="background-image: url('stages/S2_Stage_Piranha_Pit.png');"></div>
-					<div class="stageShade stageWidth"></div>
-
-					<div class="gameInfo stageWidth">
-						<div class="gameMap">Piranha Pit</div>
-						<div class="gameMode">Rainmaker</div>
-					</div>
-
-					<div class="stageWinner stageWidth" style="opacity: 0;">
-						<div class="teamWinnerName">
-							Dura Suffering in Salmon Run
-						</div>
-					</div>
-				</div>
-				<div class="stageElem stageWidth">
-					<div class="stageImg stageWidth" style="background-image: url('stages/S2_Stage_The_Reef.png');"></div>
-					<div class="stageShade stageWidth"></div>
-
-					<div class="gameInfo stageWidth">
-						<div class="gameMap">The Reef</div>
-						<div class="gameMode">Clam Blitz</div>
-					</div>
-
-					<div class="stageWinner stageWidth" style="opacity: 0;">
-						<div class="teamWinnerName">
-							Dura Suffering in Salmon Run
-						</div>
-					</div>
-				</div>
-				<div class="stageElem stageWidth">
-					<div class="stageImg stageWidth" style="background-image: url('stages/S2_Stage_Walleye_Warehouse.png');"></div>
-					<div class="stageShade stageWidth"></div>
-
-					<div class="gameInfo stageWidth">
-						<div class="gameMap">Walleye Warehouse</div>
-						<div class="gameMode">Splat Zones</div>
-					</div>
-
-					<div class="stageWinner stageWidth" style="opacity: 0;">
-						<div class="teamWinnerName">
-							Dura Suffering in Salmon Run
-						</div>
-					</div>
-				</div>
-				<div class="stageElem stageWidth">
-					<div class="stageImg stageWidth" style="background-image: url('stages/S2_Stage_New_Albacore_Hotel.png');"></div>
-					<div class="stageShade stageWidth"></div>
-
-					<div class="gameInfo stageWidth">
-						<div class="gameMap">New Albacore Hotel</div>
-						<div class="gameMode">Clam Blitz</div>
-					</div>
-
-					<div class="stageWinner stageWidth" style="opacity: 0;">
-						<div class="teamWinnerName">
-							Dura Suffering in Salmon Run
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 
@@ -219,8 +114,15 @@
 		</div>
 	</div>
 
+	<!-- Libraries -->
+	<script src="../node_modules/lottie-web/build/player/lottie.js"></script>
+	<script src="../node_modules/gsap/dist/gsap.js"></script>
 	<script src="scripts/fitted-text.js"></script>
-	<script src="break.js"></script>
+	<!-- Break related JS -->
+	<script src="scripts/break/break.js"></script>
+	<script src="scripts/break/header.js"></script>
+	<script src="scripts/break/mainScene.js"></script>
+	<script src="scripts/break/teamScene.js"></script>
 </body>
 
 </html>
