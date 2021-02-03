@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="globalStyles.css">
+	<style>
+		.timerContainer {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
+
+		.timerContainer > div {
+			margin-top: -3px;
+			margin-left: 5px;
+			text-align: center;
+		}
+
+		.timerContainer > div > input {
+			height: 30px;
+		}
+
+		.timerContainer > div > select {
+			height: 30px;
+			margin-top: 3px;
+		}
+
+		.selectContainer > label {
+			font-size: 0.75em;
+		}
+	</style>
+</head>
+<body>
+<div class="space">
+	<div class="title">Flavour Pill</div>
+	<div class="showHideSpace">
+		<button id="hidePill" class="btnRed">Hide</button>
+		<button id="showPill" class="btnGreen">Show</button>
+	</div>
+	<div>
+		<div class="inputLabel">FlavourText</div>
+		<input id="FlavourInput" type="text">
+	</div>
+	<button id="updateMainScene" class="btnBlue maxWidthButton">Update</button>
+</div>
+
+
+<script src="globalScripts.js"></script>
+<script src="SUE.js"></script>
+</body>

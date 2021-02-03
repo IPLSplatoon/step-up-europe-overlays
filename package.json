@@ -19,6 +19,16 @@
   ],
   "nodecg": {
     "compatibleRange": "^1.7.4",
+    "dashboardPanels": [
+      {
+        "name": "sue",
+        "title": "SUE Options",
+        "file": "SUE.html",
+        "width": 2,
+        "workspace": "IPL",
+        "headerColor": "#262F40"
+      }
+    ],
     "graphics": [
       {
         "file": "main.html",
