@@ -1,6 +1,14 @@
 # step-up-europe-overlays
 Overlays Graphics Package for Step Up, Europe!
 
+## Before using
+
+This bundle is not intended to be used verbatim. We're open-sourcing this bundle in hopes that people will use it as a thing to learn from, rather than just taking and using it for their own broadcast.
+
+Some Assets are not included due to this 
+
+TL;DR: **Do not just download and use this bundle as, make something new for this and learn for it!**
+
 ## Install
 
 1.1. Install NodeCG and [nodecg-cli](https://github.com/nodecg/nodecg-cli) (optional)
@@ -40,8 +48,7 @@ From the dashboard, URLs to the graphics can be found from the graphics tab. To 
 
 Fonts used by SUE overlays are not included and you will need to aquire these files and their Commercial License required from the following
 
-- [Fat Frank](https://regularbolditalic.com/fonts/fatfrank)
-- [Mr Eaves XL Mod OT](https://www.dafontfree.io/mr-eaves-xl-modern-font-family/)
+- [Gibson](https://fonts.adobe.com/fonts/gibson)
 
 ## Credits
 

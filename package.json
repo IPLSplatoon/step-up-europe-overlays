@@ -19,8 +19,6 @@
   ],
   "nodecg": {
     "compatibleRange": "^1.7.4",
-    "dashboardPanels": [
-    ],
     "graphics": [
       {
         "file": "main.html",
