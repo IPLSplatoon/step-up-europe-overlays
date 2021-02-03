@@ -3,11 +3,14 @@ const SUEPILL = nodecg.Replicant('suePill')
 SUEPILL.on('change', newValue => {
 	FlavourInput.value = newValue.text;
 	disableBarButtons(newValue.show)
-
 })
 
 hidePill.onclick = () => {SUEPILL.value.show = false;}
 showPill.onclick = () => {SUEPILL.value.show = true;}
+
+updateHeaderText.onclick = () => {
+	SUEPILL.value.text = FlavourInput.value
+}
 
 function disableBarButtons(currentBar) {
 	const elements = ["hidePill", "showPill"];
