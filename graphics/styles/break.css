@@ -26,11 +26,15 @@ body {
   height: 1080px;
   font-family: sans-serif;
   font-family: 'Gibson';
-  background: repeating-linear-gradient(55deg,
-      #17181A,
-      #17181A 40px,
-      #202020 40px,
-      #202020 80px);
+  background-image: linear-gradient(140deg,
+      #17181a 25%,
+      #202020 25%,
+      #202020 50%,
+      #17181a 50%,
+      #17181a 75%,
+      #202020 75%,
+      #202020 100%);
+  background-size: 56.01px 46.99px;
 }
 
 .sceneWrapper {
@@ -85,8 +89,7 @@ body {
 /* Header Pill */
 .header {
   position: absolute;
-  min-width: 1890px;
-  max-width: 1890px;
+  width: 1890px;
   height: 95px;
   left: -1px;
   top: 24px;
@@ -401,6 +404,7 @@ body {
   text-align: right;
   word-wrap: break-word;
 }
+
 /* Footer */
 
 .footer {
