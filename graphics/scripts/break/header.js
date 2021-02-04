@@ -1,5 +1,3 @@
-const SUEPILL = nodecg.Replicant('suePill')
-
 /**
  * Change the viewable state of the header pill
  * @param {boolean} state - to show or not
@@ -9,7 +7,7 @@ function headerAnimation(state, timeline) {
 	if (state) {
 		timeline.add(gsap.to('#header', {
 			width: '1890px',
-			duration: 0.8,
+			duration: 0.6,
 			ease: 'power2.out',
 			padding: "0px"
 		}))
@@ -32,11 +30,9 @@ function headerAnimation(state, timeline) {
 		}, '-=0.4'))
 		timeline.add(gsap.to('#header', {
 			width: '0%',
-			duration: 0.8,
+			duration: 0.6,
 			ease: 'power2.in',
 			padding: "0px"
 		}))
 	}
 }
-
-
