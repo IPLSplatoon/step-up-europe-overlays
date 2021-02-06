@@ -32,12 +32,12 @@ function teamSceneAnimation(state, timeline) {
 			duration: 0.5,
 			x: 0,
 			ease: 'power2.out'
-		}))
+		}), '-=0.2')
 		timeline.add(gsap.to('#teamBNames', {
 			duration: 0.5,
 			x: 0,
 			ease: 'power2.out'
-		}), '-=0.5')
+		}), '-=0.7')
 
 	} else {
 		timeline.add(gsap.to('#vsIcon', {
@@ -59,11 +59,11 @@ function teamSceneAnimation(state, timeline) {
 		timeline.add(gsap.to('#teamBoxA', {
 			duration: 0.5,
 			opacity: 0,
-		}), '-=0.5')
+		}), '-=0.3')
 		timeline.add(gsap.to('#teamBoxB', {
 			duration: 0.5,
 			opacity: 0,
-		}), '-=0.5')
+		}), '-=0.3')
 	}
 }
 
