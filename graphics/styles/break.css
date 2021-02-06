@@ -1,42 +1,42 @@
 @font-face {
-  font-family: 'Gibson';
-  src: url('../assets/fonts/GibsonRegular.OTF');
-  font-weight: 400;
-  font-style: normal;
+	font-family: 'Gibson';
+	src: url('../assets/fonts/GibsonRegular.OTF');
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gibson';
-  src: url('../assets/fonts/GibsonSemiBd.OTF');
-  font-weight: 600;
-  font-style: normal;
+	font-family: 'Gibson';
+	src: url('../assets/fonts/GibsonSemiBd.OTF');
+	font-weight: 600;
+	font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gibson';
-  src: url('../assets/fonts/GibsonLight.OTF');
-  font-weight: 200;
-  font-style: normal;
+	font-family: 'Gibson';
+	src: url('../assets/fonts/GibsonLight.OTF');
+	font-weight: 200;
+	font-style: normal;
 }
 
 body {
-  width: 1920px;
-  height: 1080px;
-  font-family: sans-serif;
-  font-family: 'Gibson';
-  background-image: linear-gradient(140deg,
-      #17181a 25%,
-      #202020 25%,
-      #202020 50%,
-      #17181a 50%,
-      #17181a 75%,
-      #202020 75%,
-      #202020 100%);
-  background-size: 56.01px 46.99px;
+	width: 1920px;
+	height: 1080px;
+	font-family: sans-serif;
+	font-family: 'Gibson';
+	background-image: linear-gradient(140deg,
+	#17181a 25%,
+	#202020 25%,
+	#202020 50%,
+	#17181a 50%,
+	#17181a 75%,
+	#202020 75%,
+	#202020 100%);
+	background-size: 56.01px 46.99px;
 
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
-  margin: 0px auto;
+	overflow-y: hidden; /* Hide vertical scrollbar */
+	overflow-x: hidden; /* Hide horizontal scrollbar */
+	margin: 0px auto;
 }
 
 span.pronoun {
@@ -50,92 +50,92 @@ span.pronoun {
 }
 
 .sceneWrapper {
-  width: 1920px;
-  height: 1080px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: 0;
-  margin: 0;
-  flex-direction: column;
+	width: 1920px;
+	height: 1080px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	flex-direction: column;
 }
 
 .scene {
-  position: absolute;
-  width: 1920px;
-  height: 1080px;
-  display: none;
+	position: absolute;
+	width: 1920px;
+	height: 1080px;
+	display: none;
 }
 
 .scene.mainScene {
-  width: 1920px;
-  height: 1080px;
-  right: 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+	width: 1920px;
+	height: 1080px;
+	right: 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .scene.sceneStages {
-  width: 1920px;
-  height: 1080px;
-  right: 0px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+	width: 1920px;
+	height: 1080px;
+	right: 0px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 .scene.teamScene {
-  width: 1920px;
-  height: 1080px;
-  right: 0px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+	width: 1920px;
+	height: 1080px;
+	right: 0px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 /* Header Pill */
 .header {
-  position: absolute;
-  width: 1890px;
-  height: 95px;
-  left: -1px;
-  top: 24px;
+	position: absolute;
+	width: 1890px;
+	height: 95px;
+	left: -1px;
+	top: 24px;
 
-  background: #701D93;
-  border-radius: 0px 50px 50px 0px;
+	background: #701D93;
+	border-radius: 0px 50px 50px 0px;
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
 .pillText {
-  margin-left: 20px;
-  font-size: 50px;
-  font-weight: 600;
-  color: white;
+	margin-left: 20px;
+	font-size: 50px;
+	font-weight: 600;
+	color: white;
 }
 
 .pillLogo {
-  position: relative;
-  top: 20px;
-  margin-left: auto;
-  margin-right: 15px;
+	position: relative;
+	top: 20px;
+	margin-left: auto;
+	margin-right: 15px;
 }
 
 .headerLogo {
-  height: 110px;
+	height: 110px;
 }
 
 /* Main Page */
 
-.landmarkCover{
+.landmarkCover {
 	position: absolute;
 	overflow: hidden;
 	height: 403px;
@@ -145,302 +145,310 @@ span.pronoun {
 }
 
 .landMarks {
-  width: 1120px;
-  position: absolute;
+	width: 1120px;
+	position: absolute;
 }
 
 .mainPill {
-  top: 435px;
-  left: 290px;
+	top: 435px;
+	left: 290px;
 
-  /* width: 1340px; */
-  height: 95px;
-  background-color: #701D93;
-  border-radius: 70px;
+	/* width: 1340px; */
+	height: 95px;
+	background-color: #701D93;
+	border-radius: 70px;
 
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  display: flex;
-  flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	display: flex;
+	flex-direction: row;
 
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 
-  max-width: 1340px;
+	max-width: 1340px;
 }
 
 .main-flavour-text {
-  font-size: 72px;
-  font-weight: 600;
-  color: white;
-  text-align: center;
-  max-width: 1080px;
+	font-size: 72px;
+	font-weight: 600;
+	color: white;
+	text-align: center;
+	max-width: 1080px;
 }
 
 
 .pin {
-  width: 82px;
-  position: absolute;
-  top: 10px;
-  left: 1240px;
+	width: 82px;
+	position: absolute;
+	top: 10px;
+	left: 1240px;
 }
 
 /* Info Box */
 
 .info {
-  width: 1075px;
-  height: 390px;
+	width: 1075px;
+	height: 390px;
 
-  left: 403px;
-  top: 220px;
-  position: absolute;
+	left: 403px;
+	top: 220px;
+	position: absolute;
 
-  background: #C4C4C4;
-  background: rgba(255, 255, 255, 0.1);
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 30px 0px;
+	background: #C4C4C4;
+	background: rgba(255, 255, 255, 0.1);
+	box-sizing: border-box;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 30px 0px;
 
-  justify-content: center;
-  position: relative;
-  display: flex;
-  flex-direction: column;
+	justify-content: center;
+	position: relative;
+	display: flex;
+	flex-direction: column;
 }
 
 .infoBox {
-  left: 120px;
+	left: 120px;
 
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  display: flex;
-  flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	display: flex;
+	flex-direction: row;
 
-  margin-right: auto;
-  margin-bottom: 15px;
+	margin-right: auto;
+	margin-bottom: 15px;
 }
 
 .infoBoxIcon {
-  font-size: 64px;
-  margin-right: 25px;
+	font-size: 64px;
+	margin-right: 25px;
 }
 
 .infoBoxText {
-  font-size: 55px;
-  font-weight: 400;
-  color: white;
+	font-size: 55px;
+	font-weight: 400;
+	color: white;
 }
 
 .fa-music {
-  color: #CCFF65;
+	color: #CCFF65;
 }
 
 .fa-microphone {
-  margin-left: 15px;
-  color: #E4508E;
+	margin-left: 15px;
+	color: #E4508E;
 }
 
 .fa-discord {
-  color: #7289DA;
-  margin-left: 5px;
+	color: #7289DA;
+	margin-left: 5px;
 }
 
 .fa-twitter {
-  color: #2EB7F2;
+	color: #2EB7F2;
 }
 
 /* Teams Page */
 
 .teamBox {
-  width: 490px;
-  height: 590px;
-  min-width: 490px;
-  min-height: 590px;
-  position: relative;
+	width: 490px;
+	height: 590px;
+	min-width: 490px;
+	min-height: 590px;
+	position: relative;
+	overflow: hidden;
 }
 
 .teamBackground {
-  min-width: 490px;
-  min-height: 590px;
-  background: #C4C4C4;
-  background: rgba(255, 255, 255, 0.1);
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	min-width: 490px;
+	min-height: 590px;
+	background: #C4C4C4;
+	background: rgba(255, 255, 255, 0.1);
+	box-sizing: border-box;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .teamLeft {
-  border-radius: 30px 0px;
+	border-radius: 30px 0px;
 }
 
 .teamRight {
-  border-radius: 0px 30px;
+	border-radius: 0px 30px;
 }
 
 .vsIcon {
-  width: 342px;
-  padding: 40px;
+	width: 342px;
+	padding: 40px;
 }
 
 .teamTextInfo {
-  padding-left: 30px;
-  padding-top: 30px;
+	padding-left: 30px;
+	padding-top: 30px;
 }
 
-.teamNameBox fitted-text>div {
-  border-bottom: 6px solid #65CC33;
+.teamNameBox fitted-text > div {
+	border-bottom: 6px solid #65CC33;
+}
+
+.teamNamePadding{
+	padding-top: 10px;
+	position: absolute;
 }
 
 .teamNameText {
-  font-weight: 600;
-  font-size: 64px;
-  color: white;
+	font-weight: 600;
+	font-size: 64px;
+	color: white;
 }
 
 .teamMemberText {
-  font-weight: 200;
-  font-size: 40px;
-  color: white;
-  padding-top: 15px;
+	position: absolute;
+	font-weight: 200;
+	font-size: 40px;
+	color: white;
+	padding-top: 15px;
+	line-height: 40px;
 }
 
 .teamIcon {
-  position: absolute;
-  z-index: -1;
-  width: 270px;
+	position: absolute;
+	z-index: -1;
+	width: 270px;
 
-  border-radius: 50%;
-  filter: opacity(60%);
+	border-radius: 50%;
+	filter: opacity(60%);
 
-  left: 110px;
-  top: 160px;
+	left: 110px;
+	top: 160px;
 }
 
 .backTeamIcon {
-  position: absolute;
-  z-index: -1;
-  width: 270px;
-  height: 270px;
+	position: absolute;
+	z-index: -1;
+	width: 270px;
+	height: 270px;
 
-  border-radius: 50%;
-  background-color: black;
+	border-radius: 50%;
+	background-color: black;
 
-  left: 110px;
-  top: 160px;
+	left: 110px;
+	top: 160px;
 }
 
 /* Stages */
 
 .stagesGrid {
-  position: relative;
-  height: 700px;
-  top: 15px;
+	position: relative;
+	height: 700px;
+	top: 15px;
 
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .stageElem {
-  position: relative;
-  height: 700px;
-  border-radius: 30px 0px;
+	position: relative;
+	height: 700px;
+	border-radius: 30px 0px;
 
-  padding-left: 20px;
-  padding-right: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .stageImg {
-  height: 700px;
-  z-index: -3;
+	height: 700px;
+	z-index: -3;
 
-  position: absolute;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+	position: absolute;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 
-  border-radius: 30px 0px;
+	border-radius: 30px 0px;
 }
 
 .stageShade {
-  position: absolute;
-  z-index: -2;
-  top: 0px;
-  height: 701px;
-  background: linear-gradient(180deg, rgba(57, 17, 17, 0) 57.81%, #1E1E1E 100%);
-  border-radius: 30px 0px;
+	position: absolute;
+	z-index: -2;
+	top: 0px;
+	height: 701px;
+	background: linear-gradient(180deg, rgba(57, 17, 17, 0) 57.81%, #1E1E1E 100%);
+	border-radius: 30px 0px;
 }
 
 .gameInfo {
-  z-index: 0;
-  position: absolute;
-  bottom: 0px;
+	z-index: 0;
+	position: absolute;
+	bottom: 0px;
 
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-  max-width: 700px;
-  padding-left: 5px;
+	max-width: 700px;
+	padding-left: 5px;
 }
 
 .gameMap {
-  font-weight: 600;
-  font-size: 36px;
-  color: white;
-  padding-bottom: 10px;
+	font-weight: 600;
+	font-size: 36px;
+	color: white;
+	padding-bottom: 10px;
 }
 
 .gameMode {
-  font-weight: 400;
-  font-size: 24px;
-  color: white;
-  padding-bottom: 15px;
+	font-weight: 400;
+	font-size: 24px;
+	color: white;
+	padding-bottom: 15px;
 }
 
 .stageWinner {
-  position: absolute;
-  z-index: -2px;
-  top: -2px;
-  height: 702px;
-  background: linear-gradient(180deg, #1E1E1E 0%, rgba(57, 17, 17, 0) 100%);
-  border-radius: 30px 0px;
+	position: absolute;
+	z-index: -2px;
+	top: -2px;
+	height: 702px;
+	background: linear-gradient(180deg, #1E1E1E 0%, rgba(57, 17, 17, 0) 100%);
+	border-radius: 30px 0px;
 
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .teamWinnerName {
-  font-weight: 600;
-  font-size: 36px;
-  color: white;
+	font-weight: 600;
+	font-size: 36px;
+	color: white;
 
-  padding-right: 10px;
-  padding-top: 35px;
-  max-width: 180px;
-  align-self: flex-end;
+	padding-right: 10px;
+	padding-top: 35px;
+	max-width: 180px;
+	align-self: flex-end;
 
-  text-align: right;
-  word-wrap: break-word;
+	text-align: right;
+	word-wrap: break-word;
 }
 
 /* Footer */
 
 .footer {
-  position: absolute;
-  width: 1896px;
-  height: 78px;
-  left: -1px;
-  bottom: -1px;
+	position: absolute;
+	width: 1896px;
+	height: 78px;
+	left: -1px;
+	bottom: -1px;
 
-  background: #C4C4C4;
-  opacity: 0.1;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 0px 30px 0px 0px;
+	background: #C4C4C4;
+	opacity: 0.1;
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 0px 30px 0px 0px;
 }
 
 .footerLogo {
-  height: 50px;
-  position: absolute;
-  top: 12px;
-  left: 1730px;
+	height: 50px;
+	position: absolute;
+	top: 12px;
+	left: 1730px;
 }
