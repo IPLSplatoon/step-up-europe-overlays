@@ -18,14 +18,18 @@
 
 		<div class="scene mainScene" id="mainScene">
 			<div>
-				<img src="assets/landMarks.png" class="landMarks">
+				<div class="landmarkCover">
+					<img src="assets/landMarks.png" class="landMarks" id="landMarks">
+				</div>
+	
+				<div class="mainPill" id="mainPill">
+					<div class="mainPillBackground"></div>
+					<fitted-text class="main-flavour-text" text="Up Next: Revitalize vs Valhalla" max-width="1000"
+						id="breakFlavorText"></fitted-text>
+					<img src="assets/SUEPin.png" class="pin" id="flavourPin">
+				</div>
 			</div>
-
-			<div class="mainPill">
-				<fitted-text class="main-flavour-text" text="Up Next: Revitalize vs Valhalla" max-width="1000"
-					id="breakFlavorText"></fitted-text>
-				<img src="assets/SUEPin.png" class="pin">
-			</div>
+			
 
 			<div class="info">
 				<div class="infoBox" id="breakCasters">
@@ -46,7 +50,7 @@
 					<div class="infoBoxIcon">
 						<i class="fab fa-discord"></i>
 					</div>
-					<fitted-text class="infoBoxText" text="iplabs.ink/Discord" max-width="800" id="breakDiscordText">
+					<fitted-text class="infoBoxText" text="discord.io/StepUpEurope" max-width="800" id="breakDiscordText">
 					</fitted-text>
 				</div>
 				<div class="infoBox" id="breakTwitter">

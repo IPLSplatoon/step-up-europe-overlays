@@ -19,8 +19,6 @@
   font-style: normal;
 }
 
-
-
 body {
   width: 1920px;
   height: 1080px;
@@ -35,6 +33,20 @@ body {
       #202020 75%,
       #202020 100%);
   background-size: 56.01px 46.99px;
+
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  margin: 0px auto;
+}
+
+span.pronoun {
+	font-weight: 200;
+	font-size: 24px;
+	background-color: #E4508E;
+	padding: 7px 5px;
+	color: white;
+	margin-top: -5px;
+	border-radius: 0px 10px;
 }
 
 .sceneWrapper {
@@ -64,6 +76,7 @@ body {
   right: 0px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .scene.sceneStages {
@@ -122,25 +135,32 @@ body {
 
 /* Main Page */
 
+.landmarkCover{
+	position: absolute;
+	overflow: hidden;
+	height: 403px;
+	width: 1120px;
+	top: 35px;
+	left: 384px;
+}
+
 .landMarks {
   width: 1120px;
   position: absolute;
-  top: 35px;
-  left: 384px;
 }
 
 .mainPill {
   top: 435px;
   left: 290px;
 
-  width: 1340px;
+  /* width: 1340px; */
   height: 95px;
   background-color: #701D93;
   border-radius: 70px;
 
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: row;
 
@@ -172,7 +192,7 @@ body {
   height: 390px;
 
   left: 403px;
-  top: 470px;
+  top: 220px;
   position: absolute;
 
   background: #C4C4C4;
