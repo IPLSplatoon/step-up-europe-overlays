@@ -18,7 +18,7 @@ function headerAnimation(state, timeline) {
 		timeline.add(gsap.to('#pillFlavourText', {
 			duration: 0.4,
 			opacity: 1,
-		}, '-=0.4'))
+		}), '-=0.4')
 	} else {
 		timeline.add(gsap.to('#pillLogo', {
 			duration: 0.4,
@@ -27,7 +27,7 @@ function headerAnimation(state, timeline) {
 		timeline.add(gsap.to('#pillFlavourText', {
 			duration: 0.4,
 			opacity: 0,
-		}, '-=0.4'))
+		}), '-=0.4')
 		timeline.add(gsap.to('#header', {
 			width: '0%',
 			duration: 0.6,
