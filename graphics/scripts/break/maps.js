@@ -3,29 +3,46 @@
  * @param {boolean} state - to show or not
  * @param {any} timeline
  */
-function stagesSceneAnimation(state, timeline){
-	if (state) {
-		timeline.add(gsap.to('#stageScene', {
-			duration: 0.5,
+function stagesSceneAnimation(state, timeline) {
+	if (state){
+		timeline.add(gsap.to('.stagesGrid', {
 			opacity: 1,
 		}))
-	} else {
-		timeline.add(gsap.to('#stageScene', {
-			duration: 0.5,
+	}
+
+	let stageElems = document.querySelectorAll('.stageElem');
+	let opacity = state ? 1 : 0;
+
+	for (let i = 0; i < stageElems.length; i++) {
+		const elem = stageElems[i];
+		let cardYTo = state ? 0 : 50;
+		let cardYFrom = state ? -50 : 0;
+		let cardDelay = (0.1 * i);
+		let cardEase = state ? 'power2.out' : 'power2.in';
+
+		timeline.add(gsap.fromTo(elem,
+			{y: cardYFrom, opacity: (opacity === 1) ? 0 : 1},
+			{duration: 0.4, y: cardYTo, ease: cardEase, opacity: opacity}
+		), `-=${cardDelay}`)
+	}
+
+	if (!state){
+		timeline.add(gsap.to('.stagesGrid', {
 			opacity: 0,
 		}))
 	}
+
 }
 
 function setWinners(val) {
 	for (let i = 0; i < val.length; i++) {
 		const element = val[i];
 		if (element === 0) {
-			setWinner(i+1, '', false);
+			setWinner(i + 1, '', false);
 		} else if (element === 1) {
-			setWinner(i+1, SBData.value.teamAInfo.name, true);
+			setWinner(i + 1, SBData.value.teamAInfo.name, true);
 		} else {
-			setWinner(i+1, SBData.value.teamBInfo.name, true);
+			setWinner(i + 1, SBData.value.teamBInfo.name, true);
 		}
 	}
 }
@@ -37,8 +54,12 @@ function setWinner(index, name, shown) {
 	if (!winnerElem) return;
 	let opacity;
 
-	if (shown) { opacity = 1; }
-	else { opacity = 0 };
+	if (shown) {
+		opacity = 1;
+	} else {
+		opacity = 0
+	}
+	;
 
 	if (shown) {
 		winnerNameElem.innerText = name;
@@ -90,7 +111,9 @@ function createMapListElems(maplist) {
 			setWinners(mapWinners.value)
 		}
 	});
-	gsap.to(stagesGrid, {duration: 0.5, opacity: 1, delay: 0.5});
+	if (currentBreakScene.value === 'maps'){
+		gsap.to(stagesGrid, {duration: 0.5, opacity: 1, delay: 1});
+	}
 }
 
 // returns true if there is a difference

@@ -43,10 +43,10 @@ NodeCG.waitForReplicants(currentBreakScene).then(() => {
 				stagesSceneAnimation(false, changeTimeline);
 				break;
 			default:
-				stagesSceneAnimation(false, changeTimeline);
 				mainSceneAnimation(false, changeTimeline);
 				teamSceneAnimation(false, changeTimeline);
 				headerAnimation(false, changeTimeline);
+				stagesSceneAnimation(false, changeTimeline);
 				break;
 		}
 		switch (newValue) {

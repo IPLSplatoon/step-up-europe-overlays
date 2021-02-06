@@ -25,11 +25,13 @@ function mainSceneAnimation(state, timeline) {
 		}), '-=0.3')
 		timeline.add(gsap.to('#landMarks', {
 			duration: 0.3,
+			ease: 'power2.out',
 			y: 0
 		}))
 	} else {
 		timeline.add(gsap.to('#landMarks', {
 			duration: 0.3,
+			ease: 'power2.in',
 			y: 405
 		}))
 		timeline.add(gsap.to('#breakFlavorText', {
