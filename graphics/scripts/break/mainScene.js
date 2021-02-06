@@ -23,25 +23,44 @@ function mainSceneAnimation(state, timeline) {
 			duration: 0.3,
 			y: 0
 		}), '-=0.3')
+		timeline.add(
+			gsap.from('#flavourPin',
+				{
+					duration: 1.5,
+					rotation: 30,
+					transformOrigin: "center 31%",
+					ease: 'elastic.out(2.5, 0.2)',
+				}
+			), "-=0.1"
+		)
+		timeline.add(gsap.to('#flavourPin',
+			{
+				duration: 3.5,
+				rotation: 360,
+				transformOrigin: "center 31%",
+				ease: 'elastic.out(1.5, 0.5)',
+			},
+			),'-=0.8'
+		)
 		timeline.add(gsap.to('#landMarks', {
-			duration: 0.3,
-			ease: 'power2.out',
+			duration: 0.6,
+			ease: 'power1.out',
 			y: 0
-		}))
+		}), '-=2.5')
 	} else {
 		timeline.add(gsap.to('#landMarks', {
-			duration: 0.3,
+			duration: 0.6,
 			ease: 'power2.in',
 			y: 405
 		}))
 		timeline.add(gsap.to('#breakFlavorText', {
-			duration: 0.2,
+			duration: 0.4,
 			opacity: 0,
-		}))
+		}), '-=0.4')
 		timeline.add(gsap.to('#flavourPin', {
-			duration: 0.3,
+			duration: 0.4,
 			y: -600
-		}), '-0.2')
+		}), '-=0.4')
 		timeline.add(gsap.to('#mainPill', {
 			width: '0',
 			duration: 0.5,
@@ -52,12 +71,15 @@ function mainSceneAnimation(state, timeline) {
 			duration: 0.5,
 			opacity: 0
 		}))
+		// Resets pin to 0 rotation so it doesn't freak out next time shown
+		timeline.add(gsap.to('#flavourPin', {
+			rotation: -0
+		}))
 	}
 }
-
 // Main Scene Fields
 
-const mainFlavorText = nodecg.Replicant('mainFlavorText', 'ipl-overlay-controls', { defaultValue: 'Be right back!' });
+const mainFlavorText = nodecg.Replicant('mainFlavorText', 'ipl-overlay-controls', {defaultValue: 'Be right back!'});
 const mainTextTL = gsap.timeline();
 
 mainFlavorText.on('change', newValue => {
@@ -65,7 +87,7 @@ mainFlavorText.on('change', newValue => {
 });
 
 
-const casterNames = nodecg.Replicant('casterNames', 'ipl-overlay-controls', { defaultValue: "We don't know." });
+const casterNames = nodecg.Replicant('casterNames', 'ipl-overlay-controls', {defaultValue: "We don't know."});
 const casterNamesTL = gsap.timeline();
 
 casterNames.on('change', newValue => {
@@ -91,10 +113,15 @@ function checkStringEmptyOrUndef(string) {
 }
 
 function getSongNameString(rep) {
-	if (checkStringEmptyOrUndef(rep.artist) && checkStringEmptyOrUndef(rep.song)) {return 'No song is playing.'}
+	if (checkStringEmptyOrUndef(rep.artist) && checkStringEmptyOrUndef(rep.song)) {
+		return 'No song is playing.'
+	}
 
-	if (checkStringEmptyOrUndef(rep.artist)) { return rep.song; }
-	else if (checkStringEmptyOrUndef(rep.song)) { return rep.artist; }
+	if (checkStringEmptyOrUndef(rep.artist)) {
+		return rep.song;
+	} else if (checkStringEmptyOrUndef(rep.song)) {
+		return rep.artist;
+	}
 
 	return rep.artist + ' - ' + rep.song;
 }
@@ -108,8 +135,11 @@ NodeCG.waitForReplicants(nowPlaying, nowPlayingManual, mSongEnabled).then(() => 
 	mSongEnabled.on('change', newValue => {
 		var value;
 
-		if (newValue) { value = nowPlayingManual.value; }
-		else { value = nowPlaying.value; }
+		if (newValue) {
+			value = nowPlayingManual.value;
+		} else {
+			value = nowPlaying.value;
+		}
 
 		setMainSceneText('breakMusicText', getSongNameString(value), musicTL);
 	});
@@ -129,8 +159,11 @@ NodeCG.waitForReplicants(nowPlaying, nowPlayingManual, mSongEnabled).then(() => 
 	mSongEnabled.on('change', newValue => {
 		var value;
 
-		if (newValue) { value = nowPlayingManual.value; }
-		else { value = nowPlaying.value; }
+		if (newValue) {
+			value = nowPlayingManual.value;
+		} else {
+			value = nowPlaying.value;
+		}
 
 
 	});

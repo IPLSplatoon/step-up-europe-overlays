@@ -16,10 +16,20 @@ function headerAnimation(state, timeline) {
 			ease: 'power2.out',
 			y: 0
 		}))
+		timeline.add(
+			gsap.from('#pillLogo',
+				{
+					duration: 1.5,
+					rotation: 30,
+					transformOrigin: "center 31%",
+					ease: 'elastic.out(2.5, 0.2)',
+				}
+			), "-=0.15"
+		)
 		timeline.add(gsap.to('#pillFlavourText', {
 			duration: 0.4,
 			opacity: 1,
-		}), '-=0.4')
+		}), '-=2.2')
 	} else {
 		timeline.add(gsap.to('#pillLogo', {
 			duration: 0.4,
@@ -35,6 +45,10 @@ function headerAnimation(state, timeline) {
 			duration: 0.6,
 			ease: 'power2.in',
 			padding: "0px"
+		}))
+		// Resets pin to 0 rotation so it doesn't freak out next time shown
+		timeline.add(gsap.to('#pillLogo', {
+			rotation: -0
 		}))
 	}
 }
