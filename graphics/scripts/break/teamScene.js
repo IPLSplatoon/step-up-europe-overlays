@@ -32,12 +32,12 @@ function teamSceneAnimation(state, timeline) {
 			duration: 0.5,
 			x: 0,
 			ease: 'power2.out'
-		}), '-=0.2')
+		}), '-=0.1')
 		timeline.add(gsap.to('#teamBNames', {
 			duration: 0.5,
 			x: 0,
 			ease: 'power2.out'
-		}), '-=0.7')
+		}), '-=0.5')
 
 	} else {
 		timeline.add(gsap.to('#vsIcon', {
