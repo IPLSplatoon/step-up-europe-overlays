@@ -103,7 +103,7 @@ NodeCG.waitForReplicants(nextTeams, teamImageHidden).then(() => {
 		gsap.to('#teamABackground', {opacity: opacityA});
 		teamAIcon.src = `${newValue.teamAInfo.logoUrl}`
 		gsap.to('#teamAIcon', {opacity: opacityA});
-		
+
 		gsap.to('#teamBBackground', {opacity: opacityB});
 		teamBIcon.src = `${newValue.teamBInfo.logoUrl}`
 		gsap.to('#teamBIcon', {opacity: opacityB});

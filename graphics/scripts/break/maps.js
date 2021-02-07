@@ -9,7 +9,7 @@ function stagesSceneAnimation(state, timeline, offset) {
 	if (state){
 		timeline.add(gsap.to('.stagesGrid', {
 			opacity: 1,
-		}))
+		}), `-=${offset}`)
 	}
 
 	let stageElems = document.querySelectorAll('.stageElem');
@@ -19,11 +19,8 @@ function stagesSceneAnimation(state, timeline, offset) {
 		const elem = stageElems[i];
 		let cardYTo = state ? 0 : 50;
 		let cardYFrom = state ? -50 : 0;
-		let cardDelay = 0.075 ;
+		let cardDelay = 0.1;
 		let cardEase = state ? 'power2.out' : 'power2.in';
-		if(i === 0){
-			cardDelay+=offset
-		}
 
 		timeline.add(gsap.fromTo(elem,
 			{y: cardYFrom, opacity: (opacity === 1) ? 0 : 1},
