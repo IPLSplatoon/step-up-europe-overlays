@@ -1,4 +1,5 @@
 const nextTeams = nodecg.Replicant('nextTeams', 'ipl-overlay-controls');
+const teamImageHidden = nodecg.Replicant('teamImageHidden', 'ipl-overlay-controls');
 
 let nextTeamAName = document.getElementById('nextTeamAName')
 let nextTeamBName = document.getElementById('nextTeamBName')
@@ -69,27 +70,6 @@ function teamSceneAnimation(state, timeline, offset) {
 	}
 }
 
-nextTeams.on('change', newValue => {
-	nextTeamAName.setAttribute('text', newValue.teamAInfo.name);
-	nextTeamBName.setAttribute('text', newValue.teamBInfo.name);
-
-	teamAIcon.src = `${newValue.teamAInfo.logoUrl}`
-	teamBIcon.src = `${newValue.teamBInfo.logoUrl}`
-
-	teamANames.innerHTML = '';
-	teamBNames.innerHTML = '';
-
-	for (let x in newValue.teamAInfo.players) {
-		const elem = createNextTeamPlayerElem(newValue.teamAInfo.players[x].name, 'left', 'a', x);
-		teamANames.appendChild(elem);
-	}
-
-	for (let x in newValue.teamBInfo.players) {
-		const elem = createNextTeamPlayerElem(newValue.teamBInfo.players[x].name, 'left', 'b', x);
-		teamBNames.appendChild(elem);
-	}
-});
-
 function createNextTeamPlayerElem(name, align, team, index) {
 	const textElem = document.createElement('fitted-text');
 	textElem.setAttribute('text', name);
@@ -100,12 +80,46 @@ function createNextTeamPlayerElem(name, align, team, index) {
 	return textElem;
 }
 
-const teamImageHidden = nodecg.Replicant('teamImageHidden', 'ipl-overlay-controls');
+NodeCG.waitForReplicants(nextTeams, teamImageHidden).then(() => {
+	teamImageHidden.on('change', newValue => {
+		let opacityA = (newValue.teamA && nextTeams.value.teamAInfo.logoUrl) ? 1 : 0;
+		let opacityB = (newValue.teamB && nextTeams.value.teamBInfo.logoUrl) ? 1 : 0;
 
-teamImageHidden.on('change', newValue => {
-	let opacityA = newValue.teamA ? 0.25 : 0;
-	let opacityB = newValue.teamB ? 0.25 : 0;
+		gsap.to('#teamAIcon', {duration: 0.5, opacity: opacityA});
+		gsap.to('#teamABackground', {duration: 0.5, opacity: opacityA});
+		gsap.to('#teamBIcon', {duration: 0.5, opacity: opacityB});
+		gsap.to('#teamBBackground', {duration: 0.5, opacity: opacityB});
+	});
 
-	gsap.to('#teamAIcon', {duration: 0.5, opacity: opacityA});
-	gsap.to('#teamBIcon', {duration: 0.5, opacity: opacityB});
-});
+	nextTeams.on('change', newValue => {
+		nextTeamAName.setAttribute('text', newValue.teamAInfo.name);
+		nextTeamBName.setAttribute('text', newValue.teamBInfo.name);
+
+
+		let opacityA = (newValue.teamAInfo.logoUrl && teamImageHidden.value.teamA) ? 1 : 0;
+		let opacityB = (newValue.teamBInfo.logoUrl && teamImageHidden.value.teamB) ? 1 : 0;
+
+
+		gsap.to('#teamABackground', {opacity: opacityA});
+		teamAIcon.src = `${newValue.teamAInfo.logoUrl}`
+		gsap.to('#teamAIcon', {opacity: opacityA});
+		
+		gsap.to('#teamBBackground', {opacity: opacityB});
+		teamBIcon.src = `${newValue.teamBInfo.logoUrl}`
+		gsap.to('#teamBIcon', {opacity: opacityB});
+
+		teamANames.innerHTML = '';
+		teamBNames.innerHTML = '';
+
+		for (let x in newValue.teamAInfo.players) {
+			const elem = createNextTeamPlayerElem(newValue.teamAInfo.players[x].name, 'left', 'a', x);
+			teamANames.appendChild(elem);
+		}
+
+		for (let x in newValue.teamBInfo.players) {
+			const elem = createNextTeamPlayerElem(newValue.teamBInfo.players[x].name, 'left', 'b', x);
+			teamBNames.appendChild(elem);
+		}
+	});
+
+})

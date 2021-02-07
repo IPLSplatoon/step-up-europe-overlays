@@ -322,6 +322,7 @@ span.pronoun {
 	position: absolute;
 	z-index: -1;
 	width: 270px;
+	height: 270px;
 
 	border-radius: 50%;
 	filter: opacity(60%);
