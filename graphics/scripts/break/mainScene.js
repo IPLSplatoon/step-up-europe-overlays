@@ -33,20 +33,20 @@ function mainSceneAnimation(state, timeline) {
 				}
 			), "-=0.1"
 		)
-		timeline.add(gsap.to('#flavourPin',
-			{
-				duration: 3.5,
-				rotation: 360,
-				transformOrigin: "center 31%",
-				ease: 'elastic.out(1.5, 0.5)',
-			},
-			),'-=0.8'
-		)
+		// timeline.add(gsap.to('#flavourPin',
+		// 	{
+		// 		duration: 3.5,
+		// 		rotation: 360,
+		// 		transformOrigin: "center 31%",
+		// 		ease: 'elastic.out(1.5, 0.5)',
+		// 	},
+		// 	),'-=0.8'
+		// )
 		timeline.add(gsap.to('#landMarks', {
 			duration: 0.6,
 			ease: 'power1.out',
 			y: 0
-		}), '-=2.5')
+		}), '-=1.5')  // set to -=2.5 for 360 spin
 	} else {
 		timeline.add(gsap.to('#landMarks', {
 			duration: 0.6,
