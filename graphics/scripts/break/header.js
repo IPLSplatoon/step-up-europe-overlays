@@ -1,5 +1,6 @@
 /**
  * Change the viewable state of the header pill
+ * Scene Time : 2.25 | 1
  * @param {boolean} state - to show or not
  * @param {any} timeline
  */
@@ -7,7 +8,7 @@ function headerAnimation(state, timeline) {
 	if (state) {
 		timeline.add(gsap.to('#header', {
 			width: '1890px',
-			duration: 0.6,
+			duration: 0.5,
 			ease: 'power2.out',
 			padding: "0px"
 		}))
@@ -29,7 +30,7 @@ function headerAnimation(state, timeline) {
 		timeline.add(gsap.to('#pillFlavourText', {
 			duration: 0.4,
 			opacity: 1,
-		}), '-=2.2')
+		}), '-=1.35')
 	} else {
 		timeline.add(gsap.to('#pillLogo', {
 			duration: 0.4,

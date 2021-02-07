@@ -32,45 +32,50 @@ const currentBreakScene = nodecg.Replicant('currentBreakScene', 'ipl-overlay-con
 NodeCG.waitForReplicants(currentBreakScene).then(() => {
 	currentBreakScene.on('change', (newValue, oldValue) => {
 		let changeTimeline = gsap.timeline();
+		let offsetTime = 0;
 		switch (oldValue) {
 			case 'mainScene':
 				mainSceneAnimation(false, changeTimeline);
 				break;
 			case 'nextUp':
-				teamSceneAnimation(false, changeTimeline);
+				teamSceneAnimation(false, changeTimeline, 0);
 				break;
 			case 'maps':
-				stagesSceneAnimation(false, changeTimeline);
+				stagesSceneAnimation(false, changeTimeline, 0);
 				break;
 			default:
 				mainSceneAnimation(false, changeTimeline);
-				teamSceneAnimation(false, changeTimeline);
+				teamSceneAnimation(false, changeTimeline, 0);
 				headerAnimation(false, changeTimeline);
-				stagesSceneAnimation(false, changeTimeline);
-				footerAnimation(false, changeTimeline);
+				stagesSceneAnimation(false, changeTimeline, 0);
+				footerAnimation(false, changeTimeline, 0);
 				break;
 		}
 		switch (newValue) {
 			case 'mainScene':
 				if (['nextUp', 'maps'].includes(oldValue)) {
-					footerAnimation(false, changeTimeline);
 					headerAnimation(false, changeTimeline);
+					footerAnimation(false, changeTimeline, 1);
 				}
 				mainSceneAnimation(true, changeTimeline);
 				return;
 			case 'nextUp':
+				offsetTime = 0;
 				if (oldValue === 'mainScene' || oldValue == null) {
-					footerAnimation(true, changeTimeline);
 					headerAnimation(true, changeTimeline);
+					footerAnimation(true, changeTimeline, 2.25);
+					offsetTime = 2;
 				}
-				teamSceneAnimation(true, changeTimeline);
+				teamSceneAnimation(true, changeTimeline, offsetTime);
 				return;
 			case 'maps':
+				offsetTime = 0;
 				if (oldValue === 'mainScene' || oldValue == null) {
-					footerAnimation(true, changeTimeline);
 					headerAnimation(true, changeTimeline);
+					footerAnimation(true, changeTimeline, 2.25);
+					offsetTime = 2.25;
 				}
-				stagesSceneAnimation(true, changeTimeline);
+				stagesSceneAnimation(true, changeTimeline, offsetTime);
 				return;
 			default:
 				mainSceneAnimation(true, changeTimeline);

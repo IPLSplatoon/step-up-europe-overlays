@@ -9,35 +9,37 @@ let teamBNames = document.getElementById('teamBNames')
 
 /**
  * Change the view-ability of the team break Scene
+ * Scene Time : 1.00
  * @param {boolean} state - to show or not
  * @param {any} timeline
+ * @param {number} offset
  */
-function teamSceneAnimation(state, timeline) {
+function teamSceneAnimation(state, timeline, offset) {
 	if (state) {
 		timeline.add(gsap.to('#vsIcon', {
 			duration: 0.5,
 			opacity: 1,
-		}))
+		}), `-=${offset}`)
 
 		timeline.add(gsap.to('#teamBoxA', {
 			duration: 0.5,
 			opacity: 1,
-		}), '-=0.5')
+		}), `-=${offset+0.4}`)
 		timeline.add(gsap.to('#teamBoxB', {
 			duration: 0.5,
 			opacity: 1,
-		}), '-=0.5')
+		}), `-=${offset+0.5}`)
 
 		timeline.add(gsap.to('#teamANames', {
 			duration: 0.5,
 			x: 0,
 			ease: 'power2.out'
-		}), '-=0.1')
+		}), `-=${offset + 0.1}`)
 		timeline.add(gsap.to('#teamBNames', {
 			duration: 0.5,
 			x: 0,
 			ease: 'power2.out'
-		}), '-=0.5')
+		}), `-=${offset + 0.5}`)
 
 	} else {
 		timeline.add(gsap.to('#vsIcon', {

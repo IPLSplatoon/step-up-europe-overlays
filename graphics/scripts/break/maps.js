@@ -1,9 +1,11 @@
 /**
  * Change the view-ability of the team break Scene
+ * Scene Time : 0.9
  * @param {boolean} state - to show or not
  * @param {any} timeline
+ * @param {number} offset
  */
-function stagesSceneAnimation(state, timeline) {
+function stagesSceneAnimation(state, timeline, offset) {
 	if (state){
 		timeline.add(gsap.to('.stagesGrid', {
 			opacity: 1,
@@ -19,6 +21,9 @@ function stagesSceneAnimation(state, timeline) {
 		let cardYFrom = state ? -50 : 0;
 		let cardDelay = (0.1 * i);
 		let cardEase = state ? 'power2.out' : 'power2.in';
+		if(i === 0){
+			cardDelay+=offset
+		}
 
 		timeline.add(gsap.fromTo(elem,
 			{y: cardYFrom, opacity: (opacity === 1) ? 0 : 1},
