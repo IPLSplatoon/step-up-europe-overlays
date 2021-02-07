@@ -43,9 +43,10 @@
     ]
   },
   "dependencies": {
+    "fitted-text": "^1.0.1",
     "gsap": "^3.6.0",
-    "lottie-web": "^5.7.6",
-    "lastfm": "^0.9.3"
+    "lastfm": "^0.9.3",
+    "lottie-web": "^5.7.6"
   },
   "repository": "https://github.com/IPL-Splat/step-up-europe-overlays/",
   "license": "UNLICENSED",
