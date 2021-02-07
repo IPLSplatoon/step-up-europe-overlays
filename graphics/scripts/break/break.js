@@ -47,19 +47,29 @@ NodeCG.waitForReplicants(currentBreakScene).then(() => {
 				teamSceneAnimation(false, changeTimeline);
 				headerAnimation(false, changeTimeline);
 				stagesSceneAnimation(false, changeTimeline);
+				footerAnimation(false, changeTimeline);
 				break;
 		}
 		switch (newValue) {
 			case 'mainScene':
-				if (['nextUp', 'maps'].includes(oldValue)) headerAnimation(false, changeTimeline);
+				if (['nextUp', 'maps'].includes(oldValue)) {
+					footerAnimation(false, changeTimeline);
+					headerAnimation(false, changeTimeline);
+				}
 				mainSceneAnimation(true, changeTimeline);
 				return;
 			case 'nextUp':
-				if (oldValue === 'mainScene' || oldValue == null) headerAnimation(true, changeTimeline);
+				if (oldValue === 'mainScene' || oldValue == null) {
+					footerAnimation(true, changeTimeline);
+					headerAnimation(true, changeTimeline);
+				}
 				teamSceneAnimation(true, changeTimeline);
 				return;
 			case 'maps':
-				if (oldValue === 'mainScene' || oldValue == null) headerAnimation(true, changeTimeline);
+				if (oldValue === 'mainScene' || oldValue == null) {
+					footerAnimation(true, changeTimeline);
+					headerAnimation(true, changeTimeline);
+				}
 				stagesSceneAnimation(true, changeTimeline);
 				return;
 			default:

@@ -412,7 +412,7 @@ span.pronoun {
 
 .stageWinner {
 	position: absolute;
-	z-index: -2px;
+	z-index: -2;
 	top: -2px;
 	height: 702px;
 	background: linear-gradient(180deg, #1E1E1E 0%, rgba(57, 17, 17, 0) 100%);
@@ -444,6 +444,15 @@ span.pronoun {
 	height: 78px;
 	left: -1px;
 	bottom: -1px;
+}
+
+.footBackground {
+	position: absolute;
+	width: 1896px;
+	height: 78px;
+	left: -1px;
+	bottom: -1px;
+	z-index: -1;
 
 	background: #C4C4C4;
 	opacity: 0.1;
@@ -451,6 +460,35 @@ span.pronoun {
 	box-sizing: border-box;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 0px 30px 0px 0px;
+}
+
+.footerCommsBox{
+	position: absolute;
+	overflow: hidden;
+	height: 48px;
+
+	top: 14px;
+	left: 20px;
+}
+
+.footerComms{
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 48px;
+	color: white;
+
+	height: 48px;
+	position: absolute;
+}
+
+span.footerPronouns {
+	font-weight: 200;
+	font-size: 24px;
+	background-color: #E4508E;
+	padding: 7px 5px;
+	color: white;
+	margin-top: -5px;
+	border-radius: 0px 10px;
 }
 
 .footerLogo {
