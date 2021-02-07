@@ -19,7 +19,7 @@ function stagesSceneAnimation(state, timeline, offset) {
 		const elem = stageElems[i];
 		let cardYTo = state ? 0 : 50;
 		let cardYFrom = state ? -50 : 0;
-		let cardDelay = (0.1 * i);
+		let cardDelay = 0.075 ;
 		let cardEase = state ? 'power2.out' : 'power2.in';
 		if(i === 0){
 			cardDelay+=offset
@@ -27,7 +27,7 @@ function stagesSceneAnimation(state, timeline, offset) {
 
 		timeline.add(gsap.fromTo(elem,
 			{y: cardYFrom, opacity: (opacity === 1) ? 0 : 1},
-			{duration: 0.4, y: cardYTo, ease: cardEase, opacity: opacity}
+			{duration: 0.3, y: cardYTo, ease: cardEase, opacity: opacity}
 		), `-=${cardDelay}`)
 	}
 

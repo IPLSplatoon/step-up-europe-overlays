@@ -73,7 +73,7 @@ NodeCG.waitForReplicants(currentBreakScene).then(() => {
 				if (oldValue === 'mainScene' || oldValue == null) {
 					headerAnimation(true, changeTimeline);
 					footerAnimation(true, changeTimeline, 2.25);
-					offsetTime = 2.25;
+					offsetTime = 3;
 				}
 				stagesSceneAnimation(true, changeTimeline, offsetTime);
 				return;
