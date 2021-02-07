@@ -63,7 +63,7 @@ function teamSceneAnimation(state, timeline) {
 		timeline.add(gsap.to('#teamBoxB', {
 			duration: 0.5,
 			opacity: 0,
-		}), '-=0.3')
+		}), '-=0.5')
 	}
 }
 
