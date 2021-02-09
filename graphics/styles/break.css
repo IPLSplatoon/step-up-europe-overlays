@@ -138,15 +138,18 @@ span.pronoun {
 .landmarkCover {
 	position: absolute;
 	overflow: hidden;
-	height: 403px;
+	height: 435px;
 	width: 1120px;
-	top: 35px;
+	top: 0;
 	left: 384px;
 }
 
 .landMarks {
 	width: 1120px;
+	/*height: 440px;*/
+	top: -30px;
 	position: absolute;
+	margin: 0;
 }
 
 .mainPill {

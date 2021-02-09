@@ -1,3 +1,12 @@
+// Lottie Animation
+const landmarksAnim = lottie.loadAnimation({
+	container: document.getElementById('landMarks'),
+	renderer: 'svg',
+	loop: true,
+	autoplay: true,
+	path: './assets/lottie/SUE-Landmarks_Loading.json'
+});
+
 /**
  * Change the view-ability of the main break Scene
  * @param {boolean} state - to show or not
@@ -47,7 +56,9 @@ function mainSceneAnimation(state, timeline) {
 			ease: 'power1.out',
 			y: 0
 		}), '-=1.5')  // set to -=2.5 for 360 spin
+		timeline.call(landmarksAnim.play)
 	} else {
+		timeline.call(landmarksAnim.pause)
 		timeline.add(gsap.to('#landMarks', {
 			duration: 0.6,
 			ease: 'power2.in',
