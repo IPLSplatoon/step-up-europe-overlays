@@ -35,7 +35,7 @@ function headerAnimation(state, timeline) {
 		timeline.add(gsap.to('#pillLogo', {
 			duration: 0.4,
 			ease: 'power2.in',
-			y: -150
+			y: -170
 		}))
 		timeline.add(gsap.to('#pillFlavourText', {
 			duration: 0.4,

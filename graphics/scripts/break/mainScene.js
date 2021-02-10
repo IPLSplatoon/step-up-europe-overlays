@@ -53,7 +53,7 @@ function mainSceneAnimation(state, timeline) {
 		// )
 		timeline.add(gsap.to('#landMarks', {
 			duration: 0.6,
-			ease: 'power1.out',
+			ease: 'power2.out',
 			y: 0
 		}), '-=1.5')  // set to -=2.5 for 360 spin
 		timeline.call(landmarksAnim.play)
