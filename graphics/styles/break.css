@@ -123,14 +123,13 @@ span.pronoun {
 }
 
 .pillLogo {
-	position: relative;
-	top: 20px;
-	margin-left: auto;
-	margin-right: 15px;
+	position: absolute;
+	top: 8px;
+	right: 8px;
 }
 
 .headerLogo {
-	height: 110px;
+	height: 129px;
 }
 
 /* Main Page */
@@ -182,10 +181,10 @@ span.pronoun {
 
 
 .pin {
-	width: 82px;
+	width: 79px;
 	position: absolute;
-	top: 10px;
-	left: 1240px;
+	top: 8px;
+	right: 8px;
 }
 
 /* Info Box */
@@ -328,7 +327,7 @@ span.pronoun {
 	height: 270px;
 
 	border-radius: 50%;
-	filter: opacity(60%);
+	filter: opacity(30%);
 
 	left: 110px;
 	top: 160px;
