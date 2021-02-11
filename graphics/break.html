@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="styles/break.css">
+	<script src="https://kit.fontawesome.com/6346e13f8b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="sceneWrapper">
+		<div class="header" id="header">
+			<fitted-text class="pillText" text=" " max-width="1000" id="pillFlavourText">
+			</fitted-text>
+			<div class="pillLogo" id="pillLogo">
+				<img src="assets/SUEPin.png" class="headerLogo">
+			</div>
+		</div>
+
+		<div class="scene mainScene" id="mainScene">
+			<div>
+				<div class="landmarkCover">
+<!--					<img src="assets/landMarks.png" class="landMarks" id="landMarks">-->
+					<div class="landMarks" id="landMarks"></div>
+				</div>
+
+				<div class="mainPill" id="mainPill">
+					<div class="mainPillBackground"></div>
+					<fitted-text class="main-flavour-text" text="Up Next: Revitalize vs Valhalla" max-width="1000"
+						id="breakFlavorText"></fitted-text>
+					<img src="assets/SUEPin.png" class="pin" id="flavourPin">
+				</div>
+			</div>
+
+
+			<div class="info">
+				<div class="infoBox" id="breakCasters">
+					<div class="infoBoxIcon">
+						<i class="fas fa-microphone"></i>
+					</div>
+					<fitted-text class="infoBoxText" useInnerHTML text="@TheMoo & @kjhf1273" max-width="800"
+						id="breakCastersText"></fitted-text>
+				</div>
+				<div class="infoBox" id="breakMusic">
+					<div class="infoBoxIcon">
+						<i class="fas fa-music"></i>
+					</div>
+					<fitted-text class="infoBoxText" text="Nasty Majesty ~ Off the Hook" max-width="800"
+						id="breakMusicText"></fitted-text>
+				</div>
+				<div class="infoBox" id="breadDiscord">
+					<div class="infoBoxIcon">
+						<i class="fab fa-discord"></i>
+					</div>
+					<fitted-text class="infoBoxText" text="discord.io/StepUpEurope" max-width="800" id="breakDiscordText">
+					</fitted-text>
+				</div>
+				<div class="infoBox" id="breakTwitter">
+					<div class="infoBoxIcon">
+						<i class="fab fa-twitter"></i>
+					</div>
+					<fitted-text class="infoBoxText" text="@SUE_Splat" max-width="800" id="breakTwitterText">
+					</fitted-text>
+				</div>
+			</div>
+		</div>
+
+		<div class="scene teamScene" id="teamScene">
+			<div class="teamBox" id="teamBoxA">
+				<div class="backTeamIcon"  id="teamABackground"></div>
+				<img class="teamIcon" id="teamAIcon">
+				<div class="teamBackground teamLeft">
+					<div class="teamTextInfo">
+						<div class="teamNameBox">
+							<fitted-text class="teamNameText" text="Valhalla" id="nextTeamAName" max-width="400">
+							</fitted-text>
+						</div>
+
+						<div id="teamANames" class="teamNamePadding">
+							<fitted-text class="teamMemberText" text="Valhalla" id="" max-width="400">
+							</fitted-text>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="vsIcon">
+<!--				<img src="assets/VS.png" class="vsIcon">-->
+				<div class="vsText">VS</div>
+			</div>
+
+			<div class="teamBox" id="teamBoxB">
+				<div class="backTeamIcon"  id="teamBBackground"></div>
+				<img class="teamIcon" id="teamBIcon">
+				<div class="teamBackground teamRight">
+					<div class="teamTextInfo">
+						<div>
+							<div class="teamNameBox">
+								<fitted-text class="teamNameText" text="Revitalize" id="nextTeamBName" max-width="400">
+								</fitted-text>
+							</div>
+
+							<div id="teamBNames" class="teamNamePadding">
+								<fitted-text class="teamMemberText" text="Revitalize" id=""
+									max-width="400">
+								</fitted-text>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="scene sceneStages" id="stageScene">
+			<div class="stagesGrid">
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="footBackground"></div>
+			<div class="footerCommsBox" id="footerCommsBox">
+				<fitted-text class="footerComms" useInnerHTML text="@_stanttv & @Just_Wug" id="footerComms" max-width="800"></fitted-text>
+			</div>
+			<img src="assets/SUELetters.png" class="footerLogo">
+		</div>
+	</div>
+
+	<!-- Libraries -->
+	<script src="../node_modules/lottie-web/build/player/lottie.js"></script>
+	<script src="../node_modules/gsap/dist/gsap.js"></script>
+	<script src="../node_modules/fitted-text/dist/fitted-text.js"></script>
+	<script src="scripts/stageInfo.js"></script>
+	<!-- Break related JS -->
+	<script src="scripts/break/header.js"></script>
+	<script src="scripts/break/mainScene.js"></script>
+	<script src="scripts/break/teamScene.js"></script>
+	<script src="scripts/break/maps.js"></script>
+	<script src="scripts/break/footer.js"></script>
+	<script src="scripts/break/break.js"></script>
+</body>
+
+</html>

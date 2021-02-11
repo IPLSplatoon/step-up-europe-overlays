@@ -1,0 +1,54 @@
+{
+  "name": "step-up-europe-overlays",
+  "version": "1.0.0",
+  "description": "NodeCG Overlays Graphics for Ste Up, Europe!",
+  "homepage": "",
+  "author": {
+    "name": "Vincent Lee",
+    "email": "vlee@vlee.me.uk"
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^1.7.4",
+    "dashboardPanels": [
+      {
+        "name": "sue",
+        "title": "SUE Options",
+        "file": "SUE.html",
+        "width": 2,
+        "workspace": "IPL",
+        "headerColor": "#262F40"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "main.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "break.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "dependencies": {
+    "fitted-text": "^1.0.1",
+    "gsap": "^3.6.0",
+    "lastfm": "^0.9.3",
+    "lottie-web": "^5.7.6"
+  },
+  "repository": "https://github.com/IPL-Splat/step-up-europe-overlays/",
+  "license": "UNLICENSED",
+  "private": true
+}

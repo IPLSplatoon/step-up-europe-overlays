@@ -1,0 +1,160 @@
+@font-face {
+    font-family: 'Fatfrank';
+    src: url('../assets/fonts/fatfrank-webfont.eot');
+    src: url('../assets/fonts/fonts/fatfrank-webfont.eot?')
+      format('embedded-opentype'),
+    url('../assets/fonts/fonts/fatfrank-webfont.woff') format('woff'),
+    url('../assets/fonts/fonts/fatfrank-webfont.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body {
+	font-family: 'Gibson';
+}
+
+.sbContainer {
+	position: absolute;
+	top: 40px;
+	left: 60px;
+}
+
+.sbTeamsWrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 300px;
+	height: 100px;
+}
+
+.sbBackground {
+	background-color: #202020;
+	width: 300px;
+	height: 100px;
+	border-radius: 15px 0;
+	overflow: hidden;
+	position: absolute;
+}
+
+.sbLine {
+	width: 280px;
+	height: 4px;
+	background-color: #808080;
+	position: absolute;
+}
+
+.sbScores {
+	height: inherit;
+	width: 45px;
+	background-color: #323334;
+	right: 0px;
+	position: absolute;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
+	align-items: center;
+	gap: 4px;
+}
+
+.sbScores > fitted-text {
+	color: white;
+	font-weight: 600;
+	font-size: 36px;
+	margin-left: 2.5px;
+}
+
+.sbTeamInfoGrid {
+	height: inherit;
+	position: absolute;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 4px;
+	align-items: center;
+	margin-left: 10px;
+}
+
+.sbTeamInfo {
+	display: flex;
+}
+
+.sbTeamInfo > fitted-text {
+	color: white;
+	font-weight: 400;
+	font-size: 32px;
+	margin-left: 5px;
+}
+
+.sbTeamInfo > .color {
+	width: 25px;
+	height: 34px;
+	border-radius: 10px 0;
+}
+
+#teamAColor {
+	background-color: #B1008D;
+}
+
+#teamBColor {
+	background-color: #03B362;
+}
+
+.sbFlavorText {
+	border-radius: 0 10px;
+	width: 300px;
+	height: 35px;
+	background-color: #202020;
+	margin-top: 5px;
+
+	display: flex;
+	align-items: center;
+}
+
+.sbFlavorText > img {
+	height: 25px;
+	margin: 0 15px;
+}
+
+.sbFlavorText > fitted-text {
+	color: white;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.sbCasters {
+	width: 300px;
+	background-color: #202020;
+	border-radius: 10px 0;
+	margin-top: 10px;
+	color: white;
+	display: grid;
+	grid-template-columns: 60px 240px;
+	grid-template-rows: 1fr;
+	align-items: center;
+	clip-path: polygon(0 0%, 0% 0%, 0% 100%, 0 100%);
+}
+
+.sbCasters i {
+	text-align: center;
+	color: #E4508E;
+	font-size: 40px;
+	margin: 5px 0;
+}
+
+.sbCastersContainer {
+	margin: 5px;
+}
+
+.sbCastersContainer > fitted-text {
+	font-size: 25px;
+	margin: 5px 0;
+}
+
+span.pronoun {
+	background-color: #A84EC8;
+	border-radius: 8px 0;
+	padding: 3px 5px;
+	font-size: 14px;
+	font-weight: 250;
+}
