@@ -1,8 +1,8 @@
 # step-up-europe-overlays
-Overlays Graphics Package for Step Up, Europe!
+Overlays Graphics Package for [Step Up, Europe!](https://twitter.com/SUE_Splat) live stream / production.
 
 ### Examples
-- [Scoreboard](https://github.com/IPLSplatoon/step-up-europe-overlays/Images/SUEScoreboard.gif)
+- [Scoreboard](https://github.com/IPLSplatoon/step-up-europe-overlays/blob/master/Images/SUEScoreboard.gif)
 - [Break Screen](https://www.youtube.com/watch?v=EtJiteopxJs&ab_channel=InklingPerformanceLabs)
 
 ## Before using
