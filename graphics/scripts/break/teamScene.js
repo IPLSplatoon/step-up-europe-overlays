@@ -16,6 +16,13 @@ let teamBNames = document.getElementById('teamBNames')
  * @param {number} offset
  */
 function teamSceneAnimation(state, timeline, offset) {
+	let teamOffset = 0
+	if (offset > 0){
+		teamOffset = 0.1
+	}else {
+		teamOffset = 0.5
+	}
+
 	if (state) {
 		timeline.add(gsap.to('#vsIcon', {
 			duration: 0.5,
@@ -40,7 +47,7 @@ function teamSceneAnimation(state, timeline, offset) {
 			duration: 0.5,
 			x: 0,
 			ease: 'power2.out'
-		}), `-=${offset + 0.5}`)
+		}), `-=${offset + teamOffset}`)
 
 	} else {
 		timeline.add(gsap.to('#vsIcon', {
