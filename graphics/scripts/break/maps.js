@@ -19,7 +19,7 @@ function stagesSceneAnimation(state, timeline, offset) {
 		const elem = stageElems[i];
 		let cardYTo = state ? 0 : 50;
 		let cardYFrom = state ? -50 : 0;
-		let cardDelay = 0.1;
+		let cardDelay = 0.16;
 		let cardEase = state ? 'power2.out' : 'power2.in';
 
 		timeline.add(gsap.fromTo(elem,
