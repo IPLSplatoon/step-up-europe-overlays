@@ -19,11 +19,12 @@
 	font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
+
 body {
 	width: 1920px;
 	height: 1080px;
-	font-family: sans-serif;
-	font-family: 'Gibson';
+	font-family: 'sans-serif', 'Kosugi', 'Gibson';
 	background-image: linear-gradient(140deg,
 	#17181a 25%,
 	#202020 25%,
