@@ -7,6 +7,23 @@ const landmarksAnim = lottie.loadAnimation({
 	path: './assets/lottie/SUE-Landmarks_Loading.json'
 });
 
+const landmarksUpsideDownAnim = lottie.loadAnimation({
+	container: document.getElementById('landMarksUpsideDown'),
+	renderer: 'svg',
+	loop: true,
+	autoplay: true,
+	path: './assets/lottie/SUE_Eye_Loading_Upside-Down-Tower.json'
+});
+
+function hideLandmarks(){
+	gsap.to('#landMarksUpsideDown', {
+		ease: 'power2.out',
+		y: 405
+	})
+}
+
+let currentLandmark = "landMarks";
+
 /**
  * Change the view-ability of the main break Scene
  * @param {boolean} state - to show or not
@@ -14,6 +31,11 @@ const landmarksAnim = lottie.loadAnimation({
  */
 function mainSceneAnimation(state, timeline) {
 	if (state) {
+		if ((Math.floor((Math.random() * 100) + 1)) < 75){
+			currentLandmark = "landMarks"
+		}else{
+			currentLandmark = "landMarksUpsideDown"
+		}
 		timeline.add(gsap.to('#mainScene', {
 			duration: 0.5,
 			opacity: 1,
@@ -42,24 +64,25 @@ function mainSceneAnimation(state, timeline) {
 				}
 			), "-=0.1"
 		)
-		// timeline.add(gsap.to('#flavourPin',
-		// 	{
-		// 		duration: 3.5,
-		// 		rotation: 360,
-		// 		transformOrigin: "center 31%",
-		// 		ease: 'elastic.out(1.5, 0.5)',
-		// 	},
-		// 	),'-=0.8'
-		// )
-		timeline.add(gsap.to('#landMarks', {
+		timeline.add(gsap.to(`#${currentLandmark}`, {
 			duration: 0.6,
 			ease: 'power2.out',
 			y: 0
 		}), '-=1.5')  // set to -=2.5 for 360 spin
-		timeline.call(landmarksAnim.play)
+		if(currentLandmark === "landMarks"){
+			console.log("call 1")
+			timeline.call(landmarksAnim.play)
+		}else{
+			console.log("call 2")
+			timeline.call(landmarksUpsideDownAnim.play)
+		}
 	} else {
-		timeline.call(landmarksAnim.pause)
-		timeline.add(gsap.to('#landMarks', {
+		if(currentLandmark === "landMarks"){
+			timeline.call(landmarksAnim.pause)
+		}else{
+			timeline.call(landmarksUpsideDownAnim.pause)
+		}
+		timeline.add(gsap.to(`#${currentLandmark}`, {
 			duration: 0.6,
 			ease: 'power2.in',
 			y: 405

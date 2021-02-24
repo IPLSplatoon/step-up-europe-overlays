@@ -36,6 +36,7 @@ NodeCG.waitForReplicants(currentBreakScene).then(() => {
 				stagesSceneAnimation(false, changeTimeline, 0);
 				break;
 			default:
+				hideLandmarks();
 				mainSceneAnimation(false, changeTimeline);
 				teamSceneAnimation(false, changeTimeline, 0);
 				headerAnimation(false, changeTimeline);
