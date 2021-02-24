@@ -53,3 +53,16 @@ function headerAnimation(state, timeline) {
 		}))
 	}
 }
+
+const SUEPILL = nodecg.Replicant('suePill')
+
+SUEPILL.on('change', newValue => {
+	let tHeader = gsap.timeline();
+	console.log()
+	if (currentBreakScene.value !== 'mainScene'){
+		setMainSceneText('pillFlavourText', newValue.text, tHeader);
+	}else{
+		document.querySelector("#pillFlavourText").setAttribute('text', newValue.text)
+	}
+
+})

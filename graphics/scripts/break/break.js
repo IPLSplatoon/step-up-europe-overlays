@@ -1,5 +1,3 @@
-const SUEPILL = nodecg.Replicant('suePill')
-
 /***
  * Update fitter-text elements, by Inkfarer
  * @param {String} textElemID
@@ -20,12 +18,6 @@ function setMainSceneText(textElemID, newText, tl, oldText = '') {
 	}));
 	tl.add(gsap.to(textElem, {duration: 0.5, opacity: 1, delay: 0.25}));
 }
-
-
-SUEPILL.on('change', newValue => {
-	let tHeader = gsap.timeline();
-	setMainSceneText('pillFlavourText', newValue.text, tHeader);
-})
 
 const currentBreakScene = nodecg.Replicant('currentBreakScene', 'ipl-overlay-controls');
 
