@@ -78,15 +78,19 @@ function createMapListElems(maplist) {
 
 			let mapsHTML = '';
 			let stageWidth
+			let nameWidth;
 			if (maplist.length === 4) {
 				stageWidth = '300px';
 				stagesGrid.style.width = '1020px';
+				nameWidth = "280px"
 			} else if (maplist.length === 6) {
 				stageWidth = '250px';
 				stagesGrid.style.width = '1450px';
+				nameWidth = "230px"
 			} else if (maplist.length === 8) {
 				stageWidth = '200px';
 				stagesGrid.style.width = '1680px';
+				nameWidth = "180px"
 			}
 
 			for (let i = 1; i < maplist.length; i++) {
@@ -102,7 +106,7 @@ function createMapListElems(maplist) {
 					</div>
 
 					<div class="stageWinner" style="opacity: 1; width: ${stageWidth};" id="stageWinner_${i}">
-						<div class="teamWinnerName" id="stageWinnerName_${i}"> </div>
+						<div class="teamWinnerName" style="max-width: ${nameWidth}" id="stageWinnerName_${i}"> </div>
 					</div>
 				</div>
 				`
