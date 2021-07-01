@@ -4,8 +4,9 @@
  * @param {String} newText
  * @param {any} tl
  * @param {string} oldText
+ * @param {number} delay
  */
-function setMainSceneText(textElemID, newText, tl, oldText = '') {
+function setMainSceneText(textElemID, newText, tl, delay = 0, oldText = '') {
 	let textElem = document.querySelector(`#${textElemID}`);
 	if (textElem.getAttribute('text') === newText) return;
 
@@ -16,23 +17,22 @@ function setMainSceneText(textElemID, newText, tl, oldText = '') {
 			textElem.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0 100%)';
 		}
 	}));
-	tl.add(gsap.to(textElem, {duration: 0.5, opacity: 1, delay: 0.25}));
+	const delay_internal = 0.25 + delay
+	tl.add(gsap.to(textElem, {duration: 0.5, opacity: 1, delay: delay_internal}));
 }
 
-const currentBreakScene = nodecg.Replicant('currentBreakScene', 'ipl-overlay-controls');
-
-NodeCG.waitForReplicants(currentBreakScene).then(() => {
-	currentBreakScene.on('change', (newValue, oldValue) => {
+NodeCG.waitForReplicants(activeBreakScene).then(() => {
+	activeBreakScene.on('change', (newValue, oldValue) => {
 		let changeTimeline = gsap.timeline();
 		let offsetTime = 0;
 		switch (oldValue) {
-			case 'mainScene':
+			case 'main':
 				mainSceneAnimation(false, changeTimeline);
 				break;
-			case 'nextUp':
+			case 'teams':
 				teamSceneAnimation(false, changeTimeline, 0);
 				break;
-			case 'maps':
+			case 'stages':
 				stagesSceneAnimation(false, changeTimeline, 0);
 				break;
 			default:
@@ -45,25 +45,25 @@ NodeCG.waitForReplicants(currentBreakScene).then(() => {
 				break;
 		}
 		switch (newValue) {
-			case 'mainScene':
-				if (['nextUp', 'maps'].includes(oldValue)) {
+			case 'main':
+				if (['teams', 'stages'].includes(oldValue)) {
 					headerAnimation(false, changeTimeline);
 					footerAnimation(false, changeTimeline, 1);
 				}
 				mainSceneAnimation(true, changeTimeline);
 				return;
-			case 'nextUp':
+			case 'teams':
 				offsetTime = 0;
-				if (oldValue === 'mainScene' || oldValue == null) {
+				if (oldValue === 'main' || oldValue == null) {
 					headerAnimation(true, changeTimeline);
 					footerAnimation(true, changeTimeline, 2.25);
 					offsetTime = 2;
 				}
 				teamSceneAnimation(true, changeTimeline, offsetTime);
 				return;
-			case 'maps':
+			case 'stages':
 				offsetTime = 0;
-				if (oldValue === 'mainScene' || oldValue == null) {
+				if (oldValue === 'main' || oldValue == null) {
 					headerAnimation(true, changeTimeline);
 					footerAnimation(true, changeTimeline, 2.25);
 					offsetTime = 3;

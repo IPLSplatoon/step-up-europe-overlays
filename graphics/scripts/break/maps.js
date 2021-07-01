@@ -40,11 +40,11 @@ function setWinners(val) {
 	for (let i = 0; i < val.length; i++) {
 		const element = val[i];
 		if (element === 0) {
-			setWinner(i + 1, '', false);
+			setWinner(i, '', false);
 		} else if (element === 1) {
-			setWinner(i + 1, SBData.value.teamAInfo.name, true);
+			setWinner(i, scoreboardData.value.teamAInfo.name, true);
 		} else {
-			setWinner(i + 1, SBData.value.teamBInfo.name, true);
+			setWinner(i, scoreboardData.value.teamBInfo.name, true);
 		}
 	}
 }
@@ -79,29 +79,29 @@ function createMapListElems(maplist) {
 			let mapsHTML = '';
 			let stageWidth
 			let nameWidth;
-			if (maplist.length === 4) {
+			if (maplist.length === 3) {
 				stageWidth = '300px';
 				stagesGrid.style.width = '1020px';
 				nameWidth = "280px"
-			} else if (maplist.length === 6) {
+			} else if (maplist.length === 5) {
 				stageWidth = '250px';
 				stagesGrid.style.width = '1450px';
 				nameWidth = "230px"
-			} else if (maplist.length === 8) {
+			} else if (maplist.length === 7) {
 				stageWidth = '200px';
 				stagesGrid.style.width = '1680px';
 				nameWidth = "180px"
 			}
 
-			for (let i = 1; i < maplist.length; i++) {
+			for (let i = 0; i < maplist.length; i++) {
 				const element = maplist[i];
 				let elem = `
 				<div class="stageElem" style="width: ${stageWidth};">
-					<div class="stageImg" style="width: ${stageWidth}; background-image: url('${mapNameToImagePath[element.map]}');"></div>
+					<div class="stageImg" style="width: ${stageWidth}; background-image: url('${mapNameToImagePath[element.stage]}');"></div>
 					<div class="stageShade" style="width: ${stageWidth};"></div>
 
 					<div class="gameInfo" style="width: ${stageWidth};">
-						<div class="gameMap">${element.map}</div>
+						<div class="gameMap">${element.stage}</div>
 						<div class="gameMode">${element.mode}</div>
 					</div>
 
@@ -114,10 +114,10 @@ function createMapListElems(maplist) {
 			}
 
 			stagesGrid.innerHTML = mapsHTML;
-			setWinners(mapWinners.value)
+			setWinners(gameWinners.value)
 		}
 	});
-	if (currentBreakScene.value === 'maps'){
+	if (activeBreakScene.value === 'stages'){
 		gsap.to(stagesGrid, {duration: 0.5, opacity: 1, delay: 1});
 	}
 }
@@ -132,35 +132,39 @@ function compareMapLists(val1, val2) {
 	return false;
 }
 
-const maplists = nodecg.Replicant('maplists', 'ipl-overlay-controls');
-const currentMaplistID = nodecg.Replicant('currentMaplistID', 'ipl-overlay-controls');
-const mapWinners = nodecg.Replicant('mapWinners', 'ipl-overlay-controls');
-const SBData = nodecg.Replicant('SBData', 'ipl-overlay-controls');
+// returns true if there is a difference
+function roundsDiffer(val1, val2) {
+	if (val1.length !== val2.length) return true;
+	for (let i = 0; i < val1.length; i++) {
+		if (val1[i].stage !== val2[i].stage || val1[i].mode !== val2[i].mode) return true;
+	}
+	return false;
+}
 
 window.addEventListener('load', () => {
-	NodeCG.waitForReplicants(mapWinners, SBData).then(() => {
-		mapWinners.on('change', (newValue, oldValue) => {
+	NodeCG.waitForReplicants(gameWinners, scoreboardData).then(() => {
+		gameWinners.on('change', (newValue, oldValue) => {
 			setWinners(newValue);
 		});
 
-		SBData.on('change', newValue => {
-			setWinners(mapWinners.value);
+		scoreboardData.on('change', newValue => {
+			setWinners(gameWinners.value);
 		});
 	});
 });
 
-NodeCG.waitForReplicants(maplists, currentMaplistID, mapWinners).then(() => {
-	currentMaplistID.on('change', newValue => {
-		let maplist = maplists.value.filter(list => list[0].id == newValue)[0];
+NodeCG.waitForReplicants(rounds, activeRound, gameWinners).then(() => {
+	activeRound.on('change', newValue => {
+		let maplist = rounds.value[newValue]['games'];
 		createMapListElems(maplist);
 	});
 
-	maplists.on('change', (newValue, oldValue) => {
+	rounds.on('change', (newValue, oldValue) => {
 		if (!oldValue) return;
-		let newCurrentList = newValue.filter(list => list[0].id == currentMaplistID.value)[0];
-		let oldCurrentList = oldValue.filter(list => list[0].id == currentMaplistID.value)[0];
+		let newCurrentList = newValue[activeRound.value]['games'];
+		let oldCurrentList = oldValue[activeRound.value]['games'];
 
-		if (compareMapLists(newCurrentList, oldCurrentList)) {
+		if (roundsDiffer(newCurrentList, oldCurrentList)) {
 			createMapListElems(newCurrentList);
 		}
 	});

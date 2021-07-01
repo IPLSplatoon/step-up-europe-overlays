@@ -31,11 +31,12 @@ let currentLandmark = "landMarks";
  */
 function mainSceneAnimation(state, timeline) {
 	if (state) {
-		if ((Math.floor((Math.random() * 100) + 1)) < 75){
-			currentLandmark = "landMarks"
-		}else{
-			currentLandmark = "landMarksUpsideDown"
-		}
+		// Easter Egg to make some landmarks upside down
+		// if ((Math.floor((Math.random() * 100) + 1)) < 75){
+		// 	currentLandmark = "landMarks"
+		// }else{
+		// 	currentLandmark = "landMarksUpsideDown"
+		// }
 		timeline.add(gsap.to('#mainScene', {
 			duration: 0.5,
 			opacity: 1,
@@ -113,7 +114,6 @@ function mainSceneAnimation(state, timeline) {
 }
 // Main Scene Fields
 
-const mainFlavorText = nodecg.Replicant('mainFlavorText', 'ipl-overlay-controls', {defaultValue: 'Be right back!'});
 const mainTextTL = gsap.timeline();
 
 mainFlavorText.on('change', newValue => {
@@ -121,89 +121,21 @@ mainFlavorText.on('change', newValue => {
 });
 
 
-const casterNames = nodecg.Replicant('casterNames', 'ipl-overlay-controls', {defaultValue: "We don't know."});
 const casterNamesTL = gsap.timeline();
 
-casterNames.on('change', newValue => {
-	let finalElem = newValue.replace(/\[\[/g, '<span class="pronoun">').replace(/\]\]/g, '</span>');
+casters.on('change', newValue => {
+	let finalElem = '';
+
+	Object.keys(newValue).forEach((item, index, arr) => {
+		const element = newValue[item];  // Get caster from object
+		// Add , and & to separate comms
+		if (index > 0 && index < (arr.length-1)){ finalElem += ` , ` }
+		else if(index > 0){ finalElem += ` & ` }
+		// Build new object and append to list
+		finalElem += `
+			${element.name} <span class="pronoun">${element.pronouns}</span>
+		`;
+	});
+
 	setMainSceneText('breakCastersText', finalElem, casterNamesTL);
-});
-
-// Music Text
-
-const nowPlaying = nodecg.Replicant('nowPlaying', 'ipl-overlay-controls');
-const nowPlayingManual = nodecg.Replicant('nowPlayingManual', 'ipl-overlay-controls', {
-	defaultValue: {
-		artist: '',
-		song: ''
-	}
-});
-const mSongEnabled = nodecg.Replicant('mSongEnabled', 'ipl-overlay-controls', {defaultValue: false});
-const musicTL = gsap.timeline();
-
-function checkStringEmptyOrUndef(string) {
-	string = String(string);
-	return (string === 'undefined' || string === '');
-}
-
-function getSongNameString(rep) {
-	if (checkStringEmptyOrUndef(rep.artist) && checkStringEmptyOrUndef(rep.song)) {
-		return 'No song is playing.'
-	}
-
-	if (checkStringEmptyOrUndef(rep.artist)) {
-		return rep.song;
-	} else if (checkStringEmptyOrUndef(rep.song)) {
-		return rep.artist;
-	}
-
-	return rep.artist + ' - ' + rep.song;
-}
-
-NodeCG.waitForReplicants(nowPlaying, nowPlayingManual, mSongEnabled).then(() => {
-	nowPlaying.on('change', newValue => {
-		if (!mSongEnabled.value) {
-			setMainSceneText('breakMusicText', getSongNameString(newValue), musicTL);
-		}
-	});
-	mSongEnabled.on('change', newValue => {
-		var value;
-
-		if (newValue) {
-			value = nowPlayingManual.value;
-		} else {
-			value = nowPlaying.value;
-		}
-
-		setMainSceneText('breakMusicText', getSongNameString(value), musicTL);
-	});
-	nowPlayingManual.on('change', newValue => {
-		if (mSongEnabled.value) {
-			setMainSceneText('breakMusicText', getSongNameString(newValue), musicTL);
-		}
-	});
-});
-
-NodeCG.waitForReplicants(nowPlaying, nowPlayingManual, mSongEnabled).then(() => {
-	nowPlaying.on('change', newValue => {
-		if (!mSongEnabled.value) {
-
-		}
-	});
-	mSongEnabled.on('change', newValue => {
-		var value;
-
-		if (newValue) {
-			value = nowPlayingManual.value;
-		} else {
-			value = nowPlaying.value;
-		}
-
-
-	});
-	nowPlayingManual.on('change', newValue => {
-		if (mSongEnabled.value) {
-
-		}
-	});
 });

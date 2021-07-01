@@ -24,7 +24,16 @@ function footerAnimation(state, timeline, offset) {
 
 const casterNamesFooterTL = gsap.timeline();
 
-casterNames.on('change', newValue => {
-	let finalElem = newValue.replace(/\[\[/g, '<span class="footerPronouns">').replace(/\]\]/g, '</span>');
-	setMainSceneText('footerComms', finalElem, casterNamesFooterTL);
+casters.on('change', newValue => {
+	let elemHtml = '';
+
+	Object.keys(newValue).forEach((item, index, arr) => {
+		const element = newValue[item];  // Get caster from object
+		// Build new object and append to list
+		elemHtml += `
+			${element.name} <span class="footerPronouns">${element.pronouns}</span>
+		`;
+	});
+
+	setMainSceneText('footerComms', elemHtml, casterNamesFooterTL);
 });

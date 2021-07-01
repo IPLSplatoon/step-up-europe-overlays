@@ -54,15 +54,17 @@ function headerAnimation(state, timeline) {
 	}
 }
 
-const SUEPILL = nodecg.Replicant('suePill')
-
-SUEPILL.on('change', newValue => {
-	let tHeader = gsap.timeline();
-	console.log()
-	if (currentBreakScene.value !== 'mainScene'){
-		setMainSceneText('pillFlavourText', newValue.text, tHeader);
-	}else{
-		document.querySelector("#pillFlavourText").setAttribute('text', newValue.text)
-	}
-
-})
+NodeCG.waitForReplicants(activeBreakScene, nextTeams).then(() => {
+	activeBreakScene.on('change', (newValue, oldValue) => {
+		let tHeader = gsap.timeline();
+		switch (newValue) {
+			case 'teams':
+				setMainSceneText('pillFlavourText', mainFlavorText.value, tHeader, 2);
+				break;
+			case 'stages':
+				const newText = `${nextTeams.value.teamAInfo.name} VS ${nextTeams.value.teamBInfo.name}`
+				setMainSceneText('pillFlavourText', newText, tHeader, 2);
+				break;
+		}
+	});
+});

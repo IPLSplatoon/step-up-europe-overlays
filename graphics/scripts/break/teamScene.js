@@ -1,6 +1,3 @@
-const nextTeams = nodecg.Replicant('nextTeams', 'ipl-overlay-controls');
-const teamImageHidden = nodecg.Replicant('teamImageHidden', 'ipl-overlay-controls');
-
 let nextTeamAName = document.getElementById('nextTeamAName')
 let nextTeamBName = document.getElementById('nextTeamBName')
 let teamAIcon = document.getElementById('teamAIcon')
@@ -87,8 +84,8 @@ function createNextTeamPlayerElem(name, align, team, index) {
 	return textElem;
 }
 
-NodeCG.waitForReplicants(nextTeams, teamImageHidden).then(() => {
-	teamImageHidden.on('change', newValue => {
+NodeCG.waitForReplicants(nextTeams, teamImageShown).then(() => {
+	teamImageShown.on('change', newValue => {
 		let opacityA = (newValue.teamA && nextTeams.value.teamAInfo.logoUrl) ? 1 : 0;
 		let opacityB = (newValue.teamB && nextTeams.value.teamBInfo.logoUrl) ? 1 : 0;
 
@@ -103,8 +100,8 @@ NodeCG.waitForReplicants(nextTeams, teamImageHidden).then(() => {
 		nextTeamBName.setAttribute('text', newValue.teamBInfo.name);
 
 
-		let opacityA = (newValue.teamAInfo.logoUrl && teamImageHidden.value.teamA) ? 1 : 0;
-		let opacityB = (newValue.teamBInfo.logoUrl && teamImageHidden.value.teamB) ? 1 : 0;
+		let opacityA = (newValue.teamAInfo.logoUrl && teamImageShown.value.teamA) ? 1 : 0;
+		let opacityB = (newValue.teamBInfo.logoUrl && teamImageShown.value.teamB) ? 1 : 0;
 
 
 		gsap.to('#teamABackground', {opacity: opacityA});
