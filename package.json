@@ -1,7 +1,8 @@
 {
   "name": "step-up-europe-overlays",
   "version": "1.0.0",
-  "description": "NodeCG Overlays Graphics for Ste Up, Europe!",
+  "compatibleDashboardVersion": "^1.0.0",
+  "description": "NodeCG Overlays Graphics for Step Up, Europe!",
   "homepage": "",
   "author": {
     "name": "Vincent Lee",
